@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+
+
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+      .mainheader {
+        background-image: url(https://www.bbracingparts.com/wp-content/uploads/2022/12/textura-carbono-top.jpg);
+        background-size: cover;
+        background-attachment: inherit;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border-color: rgba(232, 232, 232, 1);
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        padding: 0 15px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Plus Jakarta Sans", sans-serif !important;
+        box-sizing: border-box;
+      }
+
+      .mainheader img {
+        max-width: 245px;
+        margin: 25px;
+      }
+
+      .header {
+        background-color: #1c1c1c;
+        display: flex;
+      }
+
+      .header ul {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 600;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        list-style: none;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 25px;
+        padding: 15px 0;
+        text-align: center;
+      }
+
+      .header ul li {
+        padding: 15px;
+        border-bottom: solid 2px transparent;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      .header ul a {
+        text-decoration: none;
+        color: #ededed;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      .header ul li:hover {
+        color: #db2c2c;
+        border-bottom: solid 2px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      .contenedor-general {
+        margin: 25px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .contenido {
+        max-width: 95%;
+      }
+
+      .titulodesc {
+        padding: 15px 25px;
+        background-color: #3a3a3a;
+        border: solid 1px #3a3a3a;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .titulodesc h2 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        color: #ededed;
+      }
+
+      .descripcion {
+        border: solid 1px #3a3a3a;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        border-radius: 0 0 5px 5px;
+        margin-bottom: 25px;
+      }
+
+      .descripcion .imagen {
+        margin: 25px;
+      }
+
+      .descripcion img {
+        width: 250px;
+        max-width: 250px;
+        max-height: 250px;
+
+        flex-shrink: 0;
+        flex-grow: 0;
+        object-fit: contain;
+      }
+
+      .description{
+      font-family: "Plus Jakarta Sans", sans-serif !important; 
+      font-size: 14px !important; 
+      margin-bottom: 10px !important;
+      }
+
+      .title{
+        
+        font-family: "Plus Jakarta Sans", sans-serif !important; 
+        font-size: 14px !important;
+      }
+      
+      .descripcionytitulo{
+        font-family: "Plus Jakarta Sans", sans-serif !important; 
+        font-size: 14px !important; 
+      }
+
+      .descripcionytitulo li{
+        font-family: "Plus Jakarta Sans", sans-serif !important;
+        font-size: 14px !important;
+        margin-bottom: 5px !important;
+      }
+
+      .descripcionytitulo span{
+        font-family: "Plus Jakarta Sans", sans-serif !important;
+        font-size: 14px !important;
+        margin-bottom: 5px !important;
+      }
+
+      .descripcion h2 {
+        margin-bottom: 15px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      .descripcion p {
+        line-height: 25px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      .content {
+        display: none;
+        grid-row: 2;
+        grid-column: 1 / 5;
+        padding: 20px;
+        background-color: #f3f3f3;
+      }
+
+     
+      .politicas input {
+        display: none;
+      }
+      
+      .politicas label {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        width: 94%;
+        background-color: #6e6e6e;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: clamp(12px, 1.5vw, 16px);
+        font-weight: 600;
+        border-radius: 5px;
+        margin: 10px 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .politicas input:checked + label {
+        background-color: #db2c2c;
+      }
+
+      .politicas label:hover {
+        background-color: #c52828;
+      }
+      .politicas #tab1:checked ~ #content1,
+      .politicas #tab2:checked ~ #content2,
+      .politicas #tab3:checked ~ #content3,
+      .politicas #tab4:checked ~ #content4 {
+        display: block;
+      }
+
+      .politicas p {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      .botonespolitica {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .final {
+        font-weight: 700;
+        margin: 25px 10px;
+      }
+
+      footer {
+        padding: 0 15px;
+        background-color: #1c1c1c;
+       display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      footer p{
+        color: #ededed;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        margin: 25px;
+      }
+
+      footer img {
+        max-width: 200px;
+        margin: 25px;
+      }
+
+      @media (max-width: 600px) {
+        .mainheader {
+          justify-content: center;
+        }
+
+        .header ul {
+        
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        list-style: none;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 15px 0;
+        text-align: center;
+      }
+
+        .descripcion {
+          align-items: center;
+          flex-direction: column;
+        }
+
+        .politicas label {
+          font-size: 16px;
+        }
+
+        .botonespolitica {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          
+        }
+
+        .content {
+          top: 0;
+        }
+
+        .content.active {
+          top: 0;
+        }
+        
+        footer{
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        footer p{
+        text-align: center;
+        margin: 25px 0;
+      }
+
+      footer img {
+        margin: 25px 0 0 0;
+      }
+      }
+    </style>
+
+    <div class="container">
+      <div class="mainheader">
+        <img
+          src="https://www.bbracingparts.com/wp-content/uploads/2022/12/logo-bb-racing-3.png"
+          alt="BB Racing Parts"
+        />
+      </div>
+      <div class="header">
+        <ul>
+          <a href="https://www.ebay.com/str/bbsupplyllc" target="_blank"
+            ><li>EBAY STORE</li></a
+          >
+          <a
+            href="https://www.ebay.com/str/bbsupplyllc/MTB/_i.html?store_cat=21920882015"
+            target="_blank"
+            ><li>MTB</li></a
+          >
+          <a
+            href="https://www.ebay.com/str/bbsupplyllc/DIRTBIKE-ADVENTURE-ENDURO/_i.html?store_cat=21921044015"
+            target="_blank"
+            ><li>DIRT BIKE / ENDURO / ADVENTURE</li></a
+          >
+          <a
+            href="https://www.ebay.com/str/bbsupplyllc/STREETBIKE/_i.html?store_cat=21921049015"
+            target="_blank"
+            ><li>STREET BIKE</li></a
+          >
+          <a
+            href="https://www.ebay.com/str/bbsupplyllc/ATV/_i.html?store_cat=22066546015"
+            target="_blank"
+            ><li>ATV</li></a
+          >
+
+          <a
+            href="https://www.ebay.com/str/bbsupplyllc/UTV/_i.html?store_cat=21921043015"
+            target="_blank"
+            ><li>UTV</li></a
+          >
+          <a
+            href="https://www.ebay.com/str/bbsupplyllc/PWC/_i.html?store_cat=22341191015"
+            target="_blank"
+            ><li>PWC</li></a
+          >
+        </ul>
+      </div>
+
+      <div class="contenedor-general">
+        <div class="contenido">
+          <div class="titulodesc">
+            <h2>Product Description</h2>
+          </div>
+          <div class="descripcion">
+            <div class="imagen">
+              Imagen
+            </div>
+            <div class="descripcionytitulo">
+              Descripcion
+            </div>
+          </div>
+        </div>
+        <div class="contenido">
+          <div class="politicas">
+            <div class="botonespolitica">
+              <input id="tab1" type="radio" name="tabs" checked />
+              <label class="" for="tab1">Refund Policy</label>
+
+              <section id="content1" class="content">
+                <p>
+                  All returns must be made within 30 days of the purchase date.
+                  All returned merchandise must be accompanied by the original
+                  invoice, return authorization number and in good resalable
+                  condition. If the returned item in determined to be in ?not
+                  resalable condition? a refund will not be issued. A 15%
+                  restocking charge will be applied. The customer is responsible
+                  for all shipping costs. Refunds will be issued in the form of
+                  credit to your account unless other arrangements have been
+                  made. Any parts not purchased directly from BB Racing Parts
+                  must be credited by the 3rd party seller. No returns on
+                  special orders will be accepted.
+                </p>
+              </section>
+              <input id="tab2" type="radio" name="tabs" />
+              <label class="" for="tab2">Privacy Policy</label>
+
+              <section id="content2" class="content">
+                <p>
+                  We treat every one of our customers with privacy and respect
+                  and BB Racing Parts will never share, sell or trade your
+                  information to another merchant or organization. Personally
+                  identifiable information such as the consumer?s name, address,
+                  email address, company, and phone number are stored for future
+                  purchases. All credit card information is transmitted securely
+                  to Authorize.net and is never stored directly with BB Racing
+                  Parts.
+                </p>
+              </section>
+              <input id="tab3" type="radio" name="tabs" />
+              <label class="" for="tab3">Security Policy</label>
+
+              <section id="content3" class="content">
+                <p>
+                  BB Racing Parts does not store your credit card information.
+                  All credit card transactions are processed through Paypal, a
+                  top-rated credit card payment gateway, to ensure your
+                  information is encrypted when in transmission and when at
+                  rest.
+                </p>
+              </section>
+              <input id="tab4" type="radio" name="tabs" />
+              <label class="" for="tab4">Shipping/Delivery Policy</label>
+
+              <section id="content4" class="content">
+                <p>
+                  All orders will ship in 1-5 business days. We will determine
+                  the most efficient shipping carrier for your order unless
+                  otherwise specified. The shipping carriers we use are Fed-Ex,
+                  United Parcel Service (UPS), and U.S Postal Service (USPS)
+                  unless otherwise specified. If you require priority shipping,
+                  we must be notified at the time purchase. If you are inquiring
+                  about when a package is to be delivered, please note the
+                  following: Credit Card and authorization verification must be
+                  received prior to processing. Fed-Ex and UPS deliveries occur
+                  Monday-Friday, excluding holidays.
+                </p>
+              </section>
+            </div>
+
+          
+          </div>
+        </div>
+      </div>
+      </div>
+          <footer>
+            <img
+              src="https://raw.githubusercontent.com/alenrl/bbracing/main/logo-bb-racing-parts.png"
+              alt="BB Racing Parts"
+            />
+           
+            <p>B&B Supply LLC DBA BB Racing Parts 
+              Miami - Florida</p>
+          </footer>
+        
+    </div>
+
+    
+  </body>
+</html>
